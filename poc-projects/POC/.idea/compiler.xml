@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="poc-kafka-producer" />
+        <module name="poc-kafka-consumer" />
         <module name="poc-collections" />
       </profile>
     </annotationProcessing>
@@ -15,6 +16,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="poc-collections" options="-parameters" />
+      <module name="poc-kafka-consumer" options="-parameters" />
       <module name="poc-kafka-producer" options="-parameters" />
     </option>
   </component>
