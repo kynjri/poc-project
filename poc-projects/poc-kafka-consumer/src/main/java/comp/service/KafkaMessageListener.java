@@ -1,6 +1,7 @@
 package comp.service;
 
 import comp.KafkaConsumerApp;
+import comp.dto.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -11,9 +12,11 @@ public class KafkaMessageListener {
     Logger log = LoggerFactory.getLogger(KafkaConsumerApp.class);
 
     @KafkaListener(topics = "mySecond-topic",groupId = "marb_group_2")
-    public void consume1(String message) {
-        log.info("consumer1 consume the message {} ", message);
+    public void consumeEvents(Customer customer) {
+        log.info("consumer consume the events {} ", customer.toString());
     }
+ }
+ /*
     @KafkaListener(topics = "mySecond-topic",groupId = "marb_group_2")
     public void consume2(String message) {
         log.info("consumer2 consume the message {} ", message);
@@ -26,4 +29,4 @@ public class KafkaMessageListener {
     public void consume4(String message) {
         log.info("consumer4 consume the message {} ", message);
     }
-}
+}*/
